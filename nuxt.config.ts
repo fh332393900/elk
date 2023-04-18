@@ -91,9 +91,9 @@ export default defineNuxtConfig({
   runtimeConfig: {
     adminKey: '',
     cloudflare: {
-      accountId: '',
-      namespaceId: '',
-      apiToken: '',
+      accountId: process.env.NUXT_CLOUDFLARE_ACCOUNT_ID,
+      namespaceId: process.env.NUXT_CLOUDFLARE_NAMESPACE_ID,
+      apiToken: process.env.NUXT_CLOUDFLARE_API_TOKEN,
     },
     public: {
       privacyPolicyUrl: '',
