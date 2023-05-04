@@ -24,6 +24,7 @@ export default defineNuxtConfig({
     '@vue-macros/nuxt',
     '@nuxtjs/i18n',
     '@nuxtjs/color-mode',
+    '@unlazy/nuxt',
     'nuxt-vitest',
     ...(isDevelopment || isWindows) ? [] : ['nuxt-security'],
     '~/modules/emoji-mart-translation',
@@ -248,9 +249,13 @@ export default defineNuxtConfig({
   staleDep: {
     packageManager: 'pnpm',
   },
+  unlazy: {
+    ssr: false,
+  },
 })
 
 declare global {
+  // eslint-disable-next-line @typescript-eslint/no-namespace
   namespace NodeJS {
     interface Process {
       mock?: Record<string, any>
@@ -258,7 +263,7 @@ declare global {
   }
 }
 
-declare module 'nuxt/dist/app' {
+declare module '#app' {
   interface RuntimeNuxtHooks {
     'elk-logo:click': () => void
   }

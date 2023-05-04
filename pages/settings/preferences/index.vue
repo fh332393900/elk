@@ -92,6 +92,21 @@ const userSettings = useUserSettings()
         {{ $t('settings.preferences.hide_username_emojis_description') }}
       </template>
     </SettingsToggleItem>
+    <SettingsToggleItem
+      :checked="getPreferences(userSettings, 'hideNews')"
+      @click="togglePreferences('hideNews')"
+    >
+      {{ $t("settings.preferences.hide_news") }}
+    </SettingsToggleItem>
+    <SettingsToggleItem
+      :checked="getPreferences(userSettings, 'zenMode')"
+      @click="togglePreferences('zenMode')"
+    >
+      {{ $t("settings.preferences.zen_mode") }}
+      <template #description>
+        {{ $t('settings.preferences.zen_mode_description') }}
+      </template>
+    </SettingsToggleItem>
     <h2 px6 py4 mt2 font-bold text-xl flex="~ gap-1" items-center>
       <div i-ri-flask-line />
       {{ $t('settings.preferences.title') }}

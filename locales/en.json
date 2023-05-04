@@ -98,6 +98,8 @@
     "error": "ERROR",
     "fetching": "Fetching...",
     "in": "in",
+    "no_bookmarks": "No bookmarked posts yet",
+    "no_favourites": "No liked posts yet",
     "not_found": "404 Not Found",
     "offline_desc": "Seems like you are offline. Please check your network connection."
   },
@@ -208,8 +210,7 @@
         "command_mode": "Command mode",
         "compose": "Compose",
         "favourite": "Favourite",
-        "title": "Actions",
-        "zen_mode": "Zen mode"
+        "title": "Actions"
       },
       "media": {
         "title": "Media"
@@ -293,7 +294,8 @@
     "followed_you": "followed you",
     "followed_you_count": "{0} people followed you|{0} person followed you|{0} people followed you",
     "missing_type": "MISSING notification.type:",
-    "reblogged_post": "reblogged your post",
+    "reblogged_post": "boosted your post",
+    "reported": "{0} reported {1}",
     "request_to_follow": "requested to follow you",
     "signed_up": "signed up",
     "update_status": "updated their post"
@@ -445,6 +447,7 @@
       "hide_boost_count": "Hide boost count",
       "hide_favorite_count": "Hide favorite count",
       "hide_follower_count": "Hide following/follower count",
+      "hide_news": "Hide news",
       "hide_reply_count": "Hide reply count",
       "hide_translation": "Hide translation",
       "hide_username_emojis": "Hide username emojis",
@@ -453,7 +456,9 @@
       "title": "Experimental Features",
       "user_picker": "User Picker",
       "virtual_scroll": "Virtual Scrolling",
-      "wellbeing": "Wellbeing"
+      "wellbeing": "Wellbeing",
+      "zen_mode": "Zen mode",
+      "zen_mode_description": "Hide asides unless the mouse cursor is over them. Also hide some elements from the timeline."
     },
     "profile": {
       "appearance": {
