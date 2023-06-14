@@ -10,8 +10,8 @@ const props = withDefaults(defineProps<{
 })
 
 defineSlots<{
-  icon: {}
-  default: {}
+  icon: (props: {}) => void
+  default: (props: {}) => void
 }>()
 
 const router = useRouter()
@@ -85,13 +85,13 @@ const noUserVisual = computed(() => isHydrated.value && props.userOnly && !curre
       padding-bottom: 0.25rem;
     }
   }
-  @media screen and ( max-height: 720px ) and ( min-width: 640px ) {
+  @media screen and ( max-height: 780px ) and ( min-width: 640px ) {
     .item {
       padding-top: 0.35rem;
       padding-bottom: 0.35rem;
     }
   }
-  @media screen and ( max-height: 720px ) and ( min-width: 1280px ) {
+  @media screen and ( max-height: 780px ) and ( min-width: 1280px ) {
     .item {
       padding-top: 0.05rem;
       padding-bottom: 0.05rem;
