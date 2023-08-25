@@ -41,7 +41,8 @@
     "unfollow": "Unfollow",
     "unmute": "Unmute",
     "view_other_followers": "Followers from other instances may not be displayed.",
-    "view_other_following": "Following from other instances may not be displayed."
+    "view_other_following": "Following from other instances may not be displayed.",
+    "withdraw_follow_request": "Withdraw follow request"
   },
   "action": {
     "apply": "Apply",
@@ -51,6 +52,7 @@
     "boost_count": "{0}",
     "boosted": "Boosted",
     "clear_publish_failed": "Clear publish errors",
+    "clear_save_failed": "Clear save errors",
     "clear_upload_failed": "Clear file upload errors",
     "close": "Close",
     "compose": "Compose",
@@ -112,12 +114,12 @@
     "block_account": {
       "cancel": "Cancel",
       "confirm": "Block",
-      "title": "Are you sure you want to block {0}？"
+      "title": "Are you sure you want to block {0}?"
     },
     "block_domain": {
       "cancel": "Cancel",
       "confirm": "Block",
-      "title": "Are you sure you want to block {0}？"
+      "title": "Are you sure you want to block {0}?"
     },
     "common": {
       "cancel": "No",
@@ -136,12 +138,12 @@
     "mute_account": {
       "cancel": "Cancel",
       "confirm": "Mute",
-      "title": "Are you sure you want to mute {0}？"
+      "title": "Are you sure you want to mute {0}?"
     },
     "show_reblogs": {
       "cancel": "Cancel",
       "confirm": "Show",
-      "title": "Are you sure you want to show boosts from {0}？"
+      "title": "Are you sure you want to show boosts from {0}?"
     },
     "unfollow": {
       "cancel": "Cancel",
@@ -170,7 +172,7 @@
   "help": {
     "build_preview": {
       "desc1": "You are currently viewing a preview version of Elk from the community - {0}.",
-      "desc2": "It may contains unreviewed or even malicious changes.",
+      "desc2": "It may contain unreviewed or even malicious changes.",
       "desc3": "Don't log in with your real account.",
       "title": "Preview deploy"
     },
@@ -219,8 +221,8 @@
       "navigation": {
         "go_to_home": "Home",
         "go_to_notifications": "Notifications",
-        "next_status": "Next status",
-        "previous_status": "Previous status",
+        "next_status": "Next post",
+        "previous_status": "Previous post",
         "shortcut_help": "Shortcut help",
         "title": "Navigation"
       }
@@ -245,6 +247,7 @@
     "pin_on_profile": "Pin on profile",
     "remove_personal_note": "Remove personal note from {0}",
     "report_account": "Report {0}",
+    "share_account": "Share {0}",
     "share_post": "Share this post",
     "show_favourited_and_boosted_by": "Show who favorited and boosted",
     "show_reblogs": "Show boosts from {0}",
@@ -307,8 +310,7 @@
     "content_warning": "Write your warning here",
     "default_1": "What is on your mind?",
     "reply_to_account": "Reply to {0}",
-    "replying": "Replying",
-    "the_thread": "the thread"
+    "replying": "Replying"
   },
   "polls": {
     "allow_multiple": "Allow multiple choice",
@@ -426,6 +428,7 @@
     "language": {
       "display_language": "Display Language",
       "label": "Language",
+      "post_language": "Posting Language",
       "status": "Translation status: {0}/{1} ({2}%)",
       "translations": {
         "add": "Add",
@@ -446,7 +449,7 @@
           "follow": "New followers",
           "mention": "Mentions",
           "poll": "Polls",
-          "reblog": "Reblog your post",
+          "reblog": "Boosts",
           "title": "What notifications to receive?"
         },
         "description": "Receive notifications even when you are not using Elk.",
@@ -557,19 +560,19 @@
     "loading": "Loading...",
     "publish_failed": "Publish failed",
     "publishing": "Publishing",
+    "save_failed": "Save failed",
     "upload_failed": "Upload failed",
     "uploading": "Uploading..."
   },
   "status": {
     "account": {
-      "suspended_message": "The account of this status has been suspended.",
+      "suspended_message": "The account of this post has been suspended.",
       "suspended_show": "Show content anyways?"
     },
     "boosted_by": "Boosted By",
     "edited": "Edited {0}",
     "favourited_by": "Favorited By",
     "filter_hidden_phrase": "Filtered by",
-    "filter_removed_phrase": "Removed by filter",
     "filter_show_anyway": "Show anyway",
     "img_alt": {
       "ALT": "ALT",
@@ -582,7 +585,6 @@
       "ends": "ends {0}",
       "finished": "finished {0}"
     },
-    "reblogged": "{0} reblogged",
     "replying_to": "Replying to {0}",
     "show_full_thread": "Show Full thread",
     "someone": "someone",
