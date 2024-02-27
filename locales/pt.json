@@ -7,12 +7,15 @@
     "route_loaded": "Página {0} carregada"
   },
   "account": {
+    "authorize": "Autorizar pedido para seguir",
+    "authorized": "Autorizou o pedido",
     "avatar_description": "Imagem de perfil de {0}",
     "blocked_by": "Está bloqueado por este utilizador.",
     "blocked_domains": "Domínios bloqueados",
     "blocked_users": "Utilizadores bloqueados",
     "blocking": "Bloqueado",
     "bot": "BOT",
+    "copy_account_name": "Copiar nome da conta",
     "favourites": "Favoritos",
     "follow": "Seguir",
     "follow_back": "Seguir de volta",
@@ -24,6 +27,7 @@
     "follows_you": "Segue-o",
     "go_to_profile": "Ir para o perfil",
     "joined": "Juntou-se a",
+    "lock": "Privada",
     "moved_title": "Indicou que a sua nova conta é agora:",
     "muted_users": "Utilizadores silenciados",
     "muting": "Silenciados",
@@ -36,7 +40,10 @@
     "profile_description": "Descrição de perfil de {0}",
     "profile_personal_note": "Nota Pessoal",
     "profile_unavailable": "Perfil indisponível",
+    "reject": "Rejeitar pedido para seguir",
+    "rejected": "Rejeitou o pedido",
     "request_follow": "Pedir para seguir",
+    "requested": "{0} pediu para o seguir",
     "unblock": "Desbloquear",
     "unfollow": "Deixar de seguir",
     "unmute": "Deixar de silenciar",
@@ -114,12 +121,14 @@
     "block_account": {
       "cancel": "Cancelar",
       "confirm": "Bloquear",
-      "title": "Tem a certeza que pretende bloquear {0}?"
+      "description": "Tem a certeza que pretende bloquear {0}?",
+      "title": "Bloquear conta"
     },
     "block_domain": {
       "cancel": "Cancelar",
       "confirm": "Bloquear",
-      "title": "Tem a certeza que pretende bloquear {0}?"
+      "description": "Tem a certeza que pretende bloquear {0}?",
+      "title": "Bloquear domínio"
     },
     "common": {
       "cancel": "Não",
@@ -128,27 +137,32 @@
     "delete_list": {
       "cancel": "Cancelar",
       "confirm": "Eliminar",
-      "title": "Tem a certeza que pretende elimnar a lista \"{0}\"?"
+      "description": "Tem a certeza que pretende eliminar a lista \"{0}\"?",
+      "title": "Eliminar lista"
     },
     "delete_posts": {
       "cancel": "Cancelar",
       "confirm": "Eliminar",
-      "title": "Tem a certeza que pretende eliminar esta publicação?"
+      "description": "Tem a certeza que pretende eliminar esta publicação?",
+      "title": "Eliminar publicação"
     },
     "mute_account": {
       "cancel": "Cancelar",
       "confirm": "Silenciar",
-      "title": "Tem a certeza que pretende silenciar {0}?"
+      "description": "Tem a certeza que pretende silenciar {0}?",
+      "title": "Silenciar conta"
     },
     "show_reblogs": {
       "cancel": "Cancelar",
       "confirm": "Mostrar",
-      "title": "Tem a certeza que pretende mostrar partilhas de {0}?"
+      "description": "Tem a certeza que pretende mostrar partilhas de {0}?",
+      "title": "Mostrar partilhas"
     },
     "unfollow": {
       "cancel": "Cancelar",
       "confirm": "Deixar de seguir",
-      "title": "Tem a certeza que pretende deixar de seguir?"
+      "description": "Tem a certeza que pretende deixar de seguir?",
+      "title": "Deixar de seguir"
     }
   },
   "conversation": {
@@ -252,7 +266,7 @@
     "share_post": "Partilhar esta publicação",
     "show_favourited_and_boosted_by": "Mostrar quem adicionou aos favoritos e partilhou",
     "show_reblogs": "Mostrar partilhas de {0}",
-    "show_untranslated": "Mostrar não traduzidas",
+    "show_untranslated": "Esconder tradução",
     "toggle_theme": {
       "dark": "Alternar modo escuro",
       "light": "Alternar modo claro"
@@ -495,6 +509,8 @@
     },
     "notifications_settings": "Notificações",
     "preferences": {
+      "embedded_media": "Leitor de Media Incorporado",
+      "embedded_media_description": "Quando é publicada uma ligação para uma transmissão de media, é apresentado um leitor incorporado ao invés do cartão de pré-visualização normal.",
       "enable_autoplay": "Habilitar Reprodução Automática",
       "enable_data_saving": "Habilitar poupança de dados",
       "enable_data_saving_description": "Poupar dados, impedindo que os anexos sejam carregados automaticamente.",
@@ -513,6 +529,7 @@
       "hide_username_emojis": "Esconder emojis do nome de utilizador",
       "hide_username_emojis_description": "Esconde os emojis do nome de utilizador nas cronologias. Os Emojis continuarão a ser visíveis nos seus perfis.",
       "label": "Preferências",
+      "optimize_for_low_performance_device": "Otimizar para dispositivos de menor desempenho",
       "title": "Funcionalidades Experimentais",
       "use_star_favorite_icon": "Utilizar estrela como ícone de favoritos",
       "user_picker": "Selecionador de Utilizador",
@@ -537,7 +554,8 @@
       },
       "featured_tags": {
         "description": "As pessoas podem encontrar as suas publicações públicas que incluem essas hashtags.",
-        "label": "Hashtags destacadas"
+        "label": "Hashtags destacadas",
+        "under_construction": "Em construção"
       },
       "label": "Perfil"
     },
@@ -572,6 +590,7 @@
     },
     "boosted_by": "Partilhada Por",
     "edited": "Editada {0}",
+    "embedded_warning": "Reproduzir isto pode revelar o seu endereço de IP a outros.",
     "favourited_by": "Adicionada Aos Favoritos Por",
     "filter_hidden_phrase": "Filtrada por",
     "filter_show_anyway": "Mostrar mesmo assim",
