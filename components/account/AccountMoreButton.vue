@@ -25,13 +25,16 @@ function shareAccount() {
 }
 
 async function toggleReblogs() {
-  if (!relationship.value!.showingReblogs && await openConfirmDialog({
-    title: t('confirm.show_reblogs.title'),
-    description: t('confirm.show_reblogs.description', [account.acct]),
-    confirm: t('confirm.show_reblogs.confirm'),
-    cancel: t('confirm.show_reblogs.cancel'),
-  }) !== 'confirm')
-    return
+  if (!relationship.value!.showingReblogs) {
+    const dialogChoice = await openConfirmDialog({
+      title: t('confirm.show_reblogs.title'),
+      description: t('confirm.show_reblogs.description', [account.acct]),
+      confirm: t('confirm.show_reblogs.confirm'),
+      cancel: t('confirm.show_reblogs.cancel'),
+    })
+    if (dialogChoice.choice !== 'confirm')
+      return
+  }
 
   const showingReblogs = !relationship.value?.showingReblogs
   relationship.value = await client.value.v1.accounts.$select(account.id).follow({ reblogs: showingReblogs })
@@ -53,7 +56,7 @@ async function removeUserNote() {
 
 <template>
   <CommonDropdown :eager-mount="command">
-    <button flex gap-1 items-center w-full rounded op75 hover="op100 text-purple" group aria-label="More actions">
+    <button flex gap-1 items-center w-full rounded op75 hover="op100 text-purple" group :aria-label="t('actions.more')">
       <div rounded-5 p2 elk-group-hover="bg-purple/10">
         <div i-ri:more-2-fill />
       </div>

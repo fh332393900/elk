@@ -31,6 +31,7 @@ export const countryLocaleVariants: Record<string, (LocaleObjectData & { country
   en: [
     // en.json contains en-US translations
     { country: true, code: 'en-US', name: 'English (US)' },
+    { code: 'en-CA', name: 'English (Canada)' },
     { code: 'en-GB', name: 'English (UK)' },
   ],
   ca: [
@@ -88,10 +89,35 @@ const locales: LocaleObjectData[] = [
       return { zero: 0, one: 1, two: 2, few: 3, many: 4, other: 5 }[name]
     },
   } satisfies LocaleObjectData),
+  ({
+    code: 'ckb',
+    file: 'ckb.json',
+    name: 'کوردیی ناوەندی',
+    dir: 'rtl',
+    pluralRule: (choice: number) => {
+      const name = new Intl.PluralRules('ckb').select(choice)
+      return { zero: 0, one: 1, two: 2, few: 3, many: 4, other: 5 }[name]
+    },
+  } satisfies LocaleObjectData),
+  ({
+    code: 'fa-IR',
+    file: 'fa-IR.json',
+    name: 'فارسی',
+    dir: 'rtl',
+    pluralRule: (choice: number) => {
+      const name = new Intl.PluralRules('fa-IR').select(choice)
+      return { zero: 0, one: 1, two: 2, few: 3, many: 4, other: 5 }[name]
+    },
+  } satisfies LocaleObjectData),
   {
     code: 'ca',
     file: 'ca.json',
     name: 'Català',
+  },
+  {
+    code: 'el-GR',
+    file: 'el-GR.json',
+    name: 'Ελληνικά',
   },
   {
     code: 'de-DE',
@@ -192,8 +218,8 @@ const locales: LocaleObjectData[] = [
     name: 'Indonesia',
   },
   {
-    code: 'fi-FI',
-    file: 'fi-FI.json',
+    code: 'fi',
+    file: 'fi.json',
     name: 'Suomi',
   },
   {

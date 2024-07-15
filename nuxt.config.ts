@@ -94,16 +94,42 @@ export default defineNuxtConfig({
     },
     optimizeDeps: {
       include: [
-        '@tiptap/vue-3', 'string-length', 'vue-virtual-scroller', 'emoji-mart', 'iso-639-1',
-        '@tiptap/extension-placeholder', '@tiptap/extension-document', '@tiptap/extension-paragraph',
-        '@tiptap/extension-text', '@tiptap/extension-mention', '@tiptap/extension-hard-break',
-        '@tiptap/extension-bold', '@tiptap/extension-italic', '@tiptap/extension-code',
-        '@tiptap/extension-history', 'prosemirror-state', 'browser-fs-access', 'blurhash',
-        '@vueuse/integrations/useFocusTrap', '@tiptap/extension-code-block', 'prosemirror-highlight',
-        '@tiptap/core', 'tippy.js', 'prosemirror-highlight/shiki', '@fnando/sparkline',
-        '@vueuse/gesture', 'github-reserved-names', 'file-saver', 'slimeform', 'vue-advanced-cropper',
-        'workbox-window', 'workbox-precaching', 'workbox-routing', 'workbox-cacheable-response',
-        'workbox-strategies', 'workbox-expiration',
+        '@tiptap/vue-3',
+        'string-length',
+        'vue-virtual-scroller',
+        'emoji-mart',
+        'iso-639-1',
+        '@tiptap/extension-placeholder',
+        '@tiptap/extension-document',
+        '@tiptap/extension-paragraph',
+        '@tiptap/extension-text',
+        '@tiptap/extension-mention',
+        '@tiptap/extension-hard-break',
+        '@tiptap/extension-bold',
+        '@tiptap/extension-italic',
+        '@tiptap/extension-code',
+        '@tiptap/extension-history',
+        'prosemirror-state',
+        'browser-fs-access',
+        'blurhash',
+        '@vueuse/integrations/useFocusTrap',
+        '@tiptap/extension-code-block',
+        'prosemirror-highlight',
+        '@tiptap/core',
+        'tippy.js',
+        'prosemirror-highlight/shiki',
+        '@fnando/sparkline',
+        '@vueuse/gesture',
+        'github-reserved-names',
+        'file-saver',
+        'slimeform',
+        'vue-advanced-cropper',
+        'workbox-window',
+        'workbox-precaching',
+        'workbox-routing',
+        'workbox-cacheable-response',
+        'workbox-strategies',
+        'workbox-expiration',
       ],
     },
   },
@@ -171,17 +197,17 @@ export default defineNuxtConfig({
     },
     publicAssets: [
       {
-        dir: '~/public/avatars',
+        dir: resolve('./public/avatars'),
         maxAge: 24 * 60 * 60 * 30, // 30 days
         baseURL: '/avatars',
       },
       {
-        dir: '~/public/emojis',
+        dir: resolve('./public/emojis'),
         maxAge: 24 * 60 * 60 * 15, // 15 days, matching service worker
         baseURL: '/emojis',
       },
       {
-        dir: '~/public/fonts',
+        dir: resolve('./public/fonts'),
         maxAge: 24 * 60 * 60 * 365, // 1 year (versioned)
         baseURL: '/fonts',
       },
@@ -244,12 +270,13 @@ export default defineNuxtConfig({
         { property: 'og:image:width', content: '3800' },
         { property: 'og:image:height', content: '1900' },
         { property: 'og:site_name', content: 'Elk' },
-        { property: 'twitter:site', content: '@elk_zone' },
-        { property: 'twitter:card', content: 'summary_large_image' },
+        { name: 'twitter:site', content: '@elk_zone' },
+        { name: 'twitter:card', content: 'summary_large_image' },
       ],
     },
   },
-  // eslint-disable-next-line @typescript-eslint/prefer-ts-expect-error
+
+  // eslint-disable-next-line ts/prefer-ts-expect-error
   // @ts-ignore nuxt-security is conditional
   security: {
     headers: {
@@ -297,7 +324,7 @@ export default defineNuxtConfig({
 })
 
 declare global {
-  // eslint-disable-next-line @typescript-eslint/no-namespace
+  // eslint-disable-next-line ts/no-namespace
   namespace NodeJS {
     interface Process {
       mock?: Record<string, any>

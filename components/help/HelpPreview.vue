@@ -8,7 +8,7 @@ const vAutoFocus = (el: HTMLElement) => el.focus()
 
 <template>
   <div my-8 px-3 sm:px-8 md:max-w-200 flex="~ col gap-4" relative>
-    <button v-auto-focus type="button" btn-action-icon absolute top--8 right-0 m1 aria-label="Close" @click="emit('close')">
+    <button v-auto-focus type="button" btn-action-icon absolute top--8 right-0 m1 :aria-label="$t('action.close')" @click="emit('close')">
       <span i-ri:close-line />
     </button>
 
@@ -30,10 +30,12 @@ const vAutoFocus = (el: HTMLElement) => el.focus()
       </NuxtLink>
       {{ $t('help.desc_para6') }}
     </p>
-    {{ $t('help.desc_para3') }}
-    <p flex="~ gap-2 wrap" mxa>
+    <NuxtLink hover:text-primary href="https://github.com/sponsors/elk-zone" target="_blank">
+      {{ $t('help.desc_para3') }}
+    </NuxtLink>
+    <p flex="~ gap-2 wrap justify-center" mxa>
       <template v-for="team of elkTeamMembers" :key="team.github">
-        <NuxtLink :href="`https://github.com/sponsors/${team.github}`" target="_blank" external rounded-full transition duration-300 border="~ transparent" hover="scale-105 border-primary">
+        <NuxtLink :href="team.link" target="_blank" external rounded-full transition duration-300 border="~ transparent" hover="scale-105 border-primary">
           <img :src="`/avatars/${team.github}-100x100.png`" :alt="team.display" rounded-full w-15 h-15 height="60" width="60">
         </NuxtLink>
       </template>

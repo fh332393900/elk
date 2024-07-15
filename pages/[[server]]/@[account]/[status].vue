@@ -21,7 +21,7 @@ const { data: status, pending, refresh: refreshStatus } = useAsyncData(
 )
 const { client } = useMasto()
 const { data: context, pending: pendingContext, refresh: refreshContext } = useAsyncData(
-  `context:${id}`,
+  `context:${id.value}`,
   async () => client.value.v1.statuses.$select(id.value).context.fetch(),
   { watch: [isHydrated], immediate: isHydrated.value, lazy: true, default: () => shallowRef() },
 )
@@ -85,7 +85,7 @@ onReactivated(() => {
             style="scroll-margin-top: 60px"
             @refetch-status="refreshStatus()"
           />
-          <PublishWidget
+          <PublishWidgetList
             v-if="currentUser"
             ref="publishWidget"
             border="y base"

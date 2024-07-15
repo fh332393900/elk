@@ -30,21 +30,23 @@ const hideAllMedia = computed(
   },
 )
 const embeddedMediaPreference = usePreferences('experimentalEmbeddedMedia')
-const allowEmbeddedMedia = computed(() => status.card?.html && embeddedMediaPreference)
+const allowEmbeddedMedia = computed(() => status.card?.html && embeddedMediaPreference.value)
 </script>
 
 <template>
   <div
     space-y-3
     :class="{
-      'pt2 pb0.5 px3.5 bg-dm rounded-4 me--1': isDM,
+      'py2 px3.5 bg-dm rounded-4 me--1': isDM,
       'ms--3.5 mt--1 ms--1': isDM && context !== 'details',
     }"
   >
     <StatusBody v-if="(!isFiltered && isSensitiveNonSpoiler) || hideAllMedia" :status="status" :newer="newer" :with-action="!isDetails" :class="isDetails ? 'text-xl' : ''" />
     <StatusSpoiler :enabled="hasSpoilerOrSensitiveMedia || isFiltered" :filter="isFiltered" :sensitive-non-spoiler="isSensitiveNonSpoiler || hideAllMedia" :is-d-m="isDM">
       <template v-if="spoilerTextPresent" #spoiler>
-        <p>{{ status.spoilerText }}</p>
+        <p>
+          <ContentRich :content="status.spoilerText" :emojis="status.emojis" :markdown="false" />
+        </p>
       </template>
       <template v-else-if="filterPhrase" #spoiler>
         <p>{{ `${$t('status.filter_hidden_phrase')}: ${filterPhrase}` }}</p>
@@ -68,7 +70,6 @@ const allowEmbeddedMedia = computed(() => status.card?.html && embeddedMediaPref
         :status="status.reblog" border="~ rounded"
         :actions="false"
       />
-      <div v-if="isDM" />
     </StatusSpoiler>
   </div>
 </template>
