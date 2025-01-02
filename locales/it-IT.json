@@ -633,6 +633,7 @@
       "dismiss": "Ignora",
       "read": "Leggi descrizione {0}"
     },
+    "pinned": "Post fissato",
     "poll": {
       "count": "{0} voti|{0} voto|{0} voti",
       "ends": "termina {0}",
@@ -648,8 +649,8 @@
     "try_original_site": "Prova sito originale"
   },
   "status_history": {
-    "created": "creato {0}",
-    "edited": "modificato {0}"
+    "created": "ha creato {0}",
+    "edited": "ha modificato {0}"
   },
   "tab": {
     "accounts": "Account",
@@ -713,6 +714,7 @@
     "year_past": "0 anni fa|1 anno fa|{n} anni fa"
   },
   "timeline": {
+    "no_posts": "Nessun post qui!",
     "show_new_items": "Mostra {v} nuovi elementi|Mostra {v} nuovo elemento|Mostra {v} nuovi elementi",
     "view_older_posts": "Non è possibile mostrare post passati di altre istanze"
   },

@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { clamp } from '@vueuse/core'
 import type { mastodon } from 'masto'
+import { clamp } from '@vueuse/core'
 import { decode } from 'blurhash'
 
 const {
@@ -83,7 +83,8 @@ useIntersectionObserver(video, (entries) => {
 
   entries.forEach((entry) => {
     if (entry.intersectionRatio <= 0.75) {
-      ready && !video.value?.paused && video.value?.pause()
+      if (ready && !video.value?.paused)
+        video.value?.pause()
     }
     else {
       video.value?.play().then(() => {

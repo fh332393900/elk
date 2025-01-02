@@ -1,18 +1,19 @@
+import type { BuildInfo } from './types'
 import { createResolver, useNuxt } from '@nuxt/kit'
 import { isCI, isDevelopment, isWindows } from 'std-env'
 import { isPreview } from './config/env'
-import { pwa } from './config/pwa'
-import type { BuildInfo } from './types'
 import { currentLocales } from './config/i18n'
+import { pwa } from './config/pwa'
 
 const { resolve } = createResolver(import.meta.url)
 
 export default defineNuxtConfig({
+  compatibilityDate: '2024-09-11',
   typescript: {
     tsConfig: {
       exclude: ['../service-worker'],
       vueCompilerOptions: {
-        target: 3.4,
+        target: 3.5,
       },
     },
   },
@@ -261,7 +262,7 @@ export default defineNuxtConfig({
         { rel: 'apple-touch-icon', href: '/apple-touch-icon.png' },
       ],
       meta: [
-        { name: 'apple-mobile-web-app-status-bar-style', content: 'black-translucent' },
+        { name: 'apple-mobile-web-app-status-bar-style', content: 'default' },
         // open graph social image
         { property: 'og:title', content: 'Elk' },
         { property: 'og:description', content: 'A nimble Mastodon web client' },
@@ -276,7 +277,7 @@ export default defineNuxtConfig({
     },
   },
 
-  // eslint-disable-next-line ts/prefer-ts-expect-error
+  // eslint-disable-next-line ts/ban-ts-comment
   // @ts-ignore nuxt-security is conditional
   security: {
     headers: {
@@ -299,7 +300,7 @@ export default defineNuxtConfig({
         'upgrade-insecure-requests': true,
       },
       permissionsPolicy: {
-        fullscreen: ['\'self\'', 'https:', 'http:'],
+        fullscreen: '*',
       },
     },
     rateLimiter: false,
@@ -310,9 +311,16 @@ export default defineNuxtConfig({
     lazy: true,
     strategy: 'no_prefix',
     detectBrowserLanguage: false,
-    langDir: 'locales',
+    // relative to i18n dir on rootDir: not yet v4 compat layout
+    langDir: '../locales',
     defaultLocale: 'en-US',
+    experimental: {
+      generatedLocaleFilePathFormat: 'relative',
+    },
     vueI18n: './config/i18n.config.ts',
+    bundle: {
+      optimizeTranslationDirective: false,
+    },
   },
   pwa,
   staleDep: {
@@ -333,6 +341,10 @@ declare global {
 }
 
 declare module '#app' {
+  interface PageMeta {
+    wideLayout?: boolean
+  }
+
   interface RuntimeNuxtHooks {
     'elk-logo:click': () => void
   }
