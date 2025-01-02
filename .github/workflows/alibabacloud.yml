@@ -69,5 +69,8 @@ jobs:
         username: ${{ secrets.SSH_USERNAME }}
         password: ${{ secrets.SSH_PASSWORD }}
         script: |
+          docker stop elk
+          docker rm elk
+          docker rmi registry.cn-chengdu.aliyuncs.com/stevenfeng-prod/elk:latest
           docker pull registry.cn-chengdu.aliyuncs.com/stevenfeng-prod/elk:latest
           docker run -p 8085:5314 -d --name elk registry.cn-chengdu.aliyuncs.com/stevenfeng-prod/elk:latest
