@@ -147,9 +147,9 @@ export default defineNuxtConfig({
   runtimeConfig: {
     adminKey: '',
     cloudflare: {
-      accountId: process.env.NUXT_CLOUDFLARE_ACCOUNT_ID,
-      namespaceId: process.env.NUXT_CLOUDFLARE_NAMESPACE_ID,
-      apiToken: process.env.NUXT_CLOUDFLARE_API_TOKEN,
+      accountId: 'VGNbRPRrEtaz4k2MYCrBMVxQ3MasLdlbe61O03Siqok',
+      namespaceId: 'Ot-pZfK4SjLX9MAxzoNDVFGFNOn7ioTCA_3lAPjmhq4',
+      apiToken: 'kA2VCe1PSf_rSU3d28uikN3-1UxFT_HEH6M5EuZiSn0',
     },
     vercel: {
       url: '',
