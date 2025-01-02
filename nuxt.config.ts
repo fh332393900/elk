@@ -274,8 +274,7 @@ export default defineNuxtConfig({
         { name: 'twitter:site', content: '@elk_zone' },
         { name: 'twitter:card', content: 'summary_large_image' },
       ],
-    },
-    buildAssetsDir: '/elk/_nuxt/'
+    }
   },
 
   // eslint-disable-next-line ts/ban-ts-comment
