@@ -16,6 +16,9 @@ if (import.meta.server && !route.path.startsWith('/settings')) {
 
 // We want to trigger rerendering the page when account changes
 const key = computed(() => `${currentUser.value?.server ?? currentServer.value}:${currentUser.value?.account.id || ''}`)
+
+console.log(process.env.NUXT_CLOUDFLARE_ACCOUNT_ID, 'process.env.NUXT_CLOUDFLARE_ACCOUNT_ID');
+console.log(process.env.NODE_ENV, 'process.env.NODE_ENV');
 </script>
 
 <template>
