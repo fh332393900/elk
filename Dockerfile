@@ -42,7 +42,7 @@ USER elk
 
 ENV NODE_ENV=production
 
-COPY --from=builder /elk/.output ./.output
+COPY --from=builder /elk ./.output
 
 EXPOSE 5314/tcp
 
