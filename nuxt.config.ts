@@ -275,6 +275,7 @@ export default defineNuxtConfig({
         { name: 'twitter:card', content: 'summary_large_image' },
       ],
     },
+    baseURL: '/elk/'
   },
 
   // eslint-disable-next-line ts/ban-ts-comment
