@@ -16,10 +16,6 @@ RUN corepack enable
 RUN apk update
 RUN apk add git --no-cache
 
-ENV NUXT_CLOUDFLARE_ACCOUNT_ID="VGNbRPRrEtaz4k2MYCrBMVxQ3MasLdlbe61O03Siqok"
-ENV NUXT_CLOUDFLARE_NAMESPACE_ID="Ot-pZfK4SjLX9MAxzoNDVFGFNOn7ioTCA_3lAPjmhq4"
-ENV NUXT_CLOUDFLARE_API_TOKEN="kA2VCe1PSf_rSU3d28uikN3-1UxFT_HEH6M5EuZiSn0"
-
 # Prepare build deps ( ignore postinstall scripts for now )
 COPY package.json ./
 COPY .npmrc ./
