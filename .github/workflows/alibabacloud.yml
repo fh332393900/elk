@@ -29,9 +29,6 @@ env:
   NAMESPACE: stevenfeng-prod
   IMAGE: elk
   TAG: latest
-  NUXT_CLOUDFLARE_ACCOUNT_ID: ${{ secrets.NUXT_CLOUDFLARE_ACCOUNT_ID }}
-  NUXT_CLOUDFLARE_NAMESPACE_ID: ${{ secrets.NUXT_CLOUDFLARE_NAMESPACE_ID }}
-  NUXT_CLOUDFLARE_API_TOKEN: ${{ secrets.NUXT_CLOUDFLARE_API_TOKEN }}
 
 permissions:
   contents: read
@@ -60,17 +57,9 @@ jobs:
 
     # Buid and push image to ACR
     - name: Build and push image to ACR
-      uses: docker/build-push-action@v3
-      with:
-        context: .
-        file: ./Dockerfile
-        build-args: |
-          NUXT_CLOUDFLARE_ACCOUNT_ID=${{ env.NUXT_CLOUDFLARE_ACCOUNT_ID }}
-          NUXT_CLOUDFLARE_NAMESPACE_ID=${{ env.NUXT_CLOUDFLARE_NAMESPACE_ID }}
-          NUXT_CLOUDFLARE_API_TOKEN=${{ env.NUXT_CLOUDFLARE_API_TOKEN }}
-        run: |
-          docker build --tag "$REGISTRY/$NAMESPACE/$IMAGE:$TAG" .
-          docker push "$REGISTRY/$NAMESPACE/$IMAGE:$TAG"
+      run: |
+        docker build --tag "$REGISTRY/$NAMESPACE/$IMAGE:$TAG" .
+        docker push "$REGISTRY/$NAMESPACE/$IMAGE:$TAG"
 
     # Deploy docker image
     - name: Deploy docker image
